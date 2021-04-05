@@ -1,0 +1,3 @@
+# cpufetch
+
+The cpufetch package
