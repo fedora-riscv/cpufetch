@@ -3,7 +3,7 @@ Summary: Simple tool for determining CPU architecture
 License: MIT
 
 Version: 0.98
-Release: 1%{?dist}
+Release: 2%{?dist}
 
 URL: https://github.com/Dr-Noob/cpufetch
 Source0: %{URL}/archive/v%{version}/%{name}-v%{version}.tar.gz
@@ -43,6 +43,9 @@ rm %{buildroot}%{_datadir}/licenses/cpufetch-git/LICENSE
 
 
 %changelog
+* Wed Jul 21 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.98-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
+
 * Mon Jun 14 2021 Artur Frenszek-Iwicki <fedora@svgames.pl> - 0.98-1
 - Update to v0.98
 - Use "make install" instead of copying files manually
