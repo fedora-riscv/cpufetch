@@ -2,8 +2,8 @@ Name: cpufetch
 Summary: Simple tool for determining CPU architecture
 License: MIT
 
-Version: 0.98
-Release: 2%{?dist}
+Version: 0.99
+Release: 1%{?dist}
 
 URL: https://github.com/Dr-Noob/cpufetch
 Source0: %{URL}/archive/v%{version}/%{name}-v%{version}.tar.gz
@@ -11,8 +11,8 @@ Source0: %{URL}/archive/v%{version}/%{name}-v%{version}.tar.gz
 BuildRequires: gcc
 BuildRequires: make
 
-# Supports only x86_64 and ARM
-ExclusiveArch: %{arm} aarch64 x86_64
+# Supports only x86_64, ARM and PowerPC
+ExclusiveArch: %{arm} aarch64 x86_64 ppc ppc64 ppc64le
 
 
 %description
@@ -36,6 +36,11 @@ It currently supports x86_64 CPUs (both Intel and AMD) and ARM.
 rm %{buildroot}%{_datadir}/licenses/cpufetch-git/LICENSE
 
 
+%check
+# Try running the program to see if it doesn't crash
+%{buildroot}%{_bindir}/%{name} --debug
+
+
 %files
 %license LICENSE
 %{_bindir}/%{name}
@@ -43,6 +48,11 @@ rm %{buildroot}%{_datadir}/licenses/cpufetch-git/LICENSE
 
 
 %changelog
+* Tue Aug 17 2021 Artur Frenszek-Iwicki <fedora@svgames.pl> - 0.99-1
+- Update to v0.99
+- Add PowerPC to ExclusiveArch list (now supported)
+- Try running the program in %%check
+
 * Wed Jul 21 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.98-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
