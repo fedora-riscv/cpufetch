@@ -2,7 +2,7 @@ Name: cpufetch
 Summary: Simple tool for determining CPU architecture
 License: MIT
 
-Version: 0.99
+Version: 1.00
 Release: 1%{?dist}
 
 URL: https://github.com/Dr-Noob/cpufetch
@@ -48,6 +48,9 @@ rm %{buildroot}%{_datadir}/licenses/cpufetch-git/LICENSE
 
 
 %changelog
+* Mon Aug 23 2021 Artur Frenszek-Iwicki <fedora@svgames.pl> - 1.00-1
+- Update to v1.00
+
 * Tue Aug 17 2021 Artur Frenszek-Iwicki <fedora@svgames.pl> - 0.99-1
 - Update to v0.99
 - Add PowerPC to ExclusiveArch list (now supported)
