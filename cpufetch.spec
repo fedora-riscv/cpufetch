@@ -2,7 +2,7 @@ Name: cpufetch
 Summary: Simple tool for determining CPU architecture
 License: MIT
 
-Version: 1.00
+Version: 1.01
 Release: 1%{?dist}
 
 URL: https://github.com/Dr-Noob/cpufetch
@@ -17,7 +17,7 @@ ExclusiveArch: %{arm} aarch64 x86_64 ppc ppc64 ppc64le
 
 %description
 %{name} is a simple, yet fancy, CPU architecture fetching tool.
-It currently supports x86_64 CPUs (both Intel and AMD) and ARM.
+It currently supports x86_64 CPUs (both Intel and AMD), ARM, and PowerPC.
 
 
 %prep
@@ -34,6 +34,8 @@ It currently supports x86_64 CPUs (both Intel and AMD) and ARM.
 
 # "make install" installs the LICENSE file as well
 rm %{buildroot}%{_datadir}/licenses/cpufetch-git/LICENSE
+# The man page is not actually gzipped
+mv %{buildroot}%{_mandir}/man1/%{name}.1{.gz,}
 
 
 %check
@@ -48,6 +50,9 @@ rm %{buildroot}%{_datadir}/licenses/cpufetch-git/LICENSE
 
 
 %changelog
+* Mon Jan 03 2022 Artur Frenszek-Iwicki <fedora@svgames.pl> - 1.01-1
+- Update to v1.01
+
 * Mon Aug 23 2021 Artur Frenszek-Iwicki <fedora@svgames.pl> - 1.00-1
 - Update to v1.00
 
