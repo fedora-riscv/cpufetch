@@ -3,7 +3,7 @@ Summary: Simple tool for determining CPU architecture
 License: GPL-2.0-only
 
 Version: 1.04
-Release: 1%{?dist}
+Release: 1.rv64%{?dist}
 
 URL: https://github.com/Dr-Noob/cpufetch
 Source0: %{URL}/archive/v%{version}/%{name}-v%{version}.tar.gz
@@ -12,7 +12,7 @@ BuildRequires: gcc
 BuildRequires: make
 
 # Supports only x86_64, ARM and PowerPC
-ExclusiveArch: %{arm} aarch64 x86_64 ppc ppc64 ppc64le
+ExclusiveArch: %{arm} aarch64 x86_64 ppc ppc64 ppc64le riscv64
 
 
 %description
@@ -50,6 +50,9 @@ mv %{buildroot}%{_mandir}/man1/%{name}.1{.gz,}
 
 
 %changelog
+* Sun Aug 20 2023 Liu Yang <Yang.Liu.sn@gmail.com> - 1.04-1.rv64
+- Add riscv64.
+
 * Sat May 06 2023 Artur Frenszek-Iwicki <fedora@svgames.pl> - 1.04-1
 - Update to v1.04
 - Drop Patch0 (build failure on PowerPC - fixed upstream)
